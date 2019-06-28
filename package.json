@@ -19,7 +19,7 @@
   "homepage": "https://github.com/jwkeena/sequelize-me-captain#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "handlebars": "^4.1.2",
+    "express-handlebars": "^3.1.0",
     "mysql2": "^1.6.5",
     "sequelize": "^5.9.0"
   }

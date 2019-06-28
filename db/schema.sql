@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS `cereals_db`;
+CREATE DATABASE `cereals_db`;
