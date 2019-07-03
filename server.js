@@ -2,11 +2,17 @@
 // Server.js - This file is the initial starting point for the Node/Express server.
 // *********************************************************************************
 
-// Sets up the Express App
+// *** Dependencies
 // =============================================================
 const express = require("express");
+
+// Sets up the Express App
+// =============================================================
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+// Requiring our models for syncing
+const db = require("./models");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -22,9 +28,12 @@ app.use(express.static("app/public"));
 
 // Import routes and give the server access to them
 require("./controllers/cereal_controller.js")(app)
+// require("./routes/html-routes.js")(app);
 
-// Starts the server to begin listening
+// Syncing our sequelize models and then starting our Express app
 // =============================================================
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
