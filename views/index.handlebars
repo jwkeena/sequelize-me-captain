@@ -1,0 +1,32 @@
+<h1>CEREAL NERDS</h1>
+
+<h2>Bowls that have not been eaten</h2>
+
+<ul>
+  {{#each cereals}}
+    {{#unless eaten}}
+      {{> bowls-block eaten=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Bowls that have been eaten</h2>
+
+<ul>
+  {{#each cereals}}
+    {{#if eaten}}
+      {{> bowls-block eaten=true}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Bowl</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="new-bowl">Cereal Name:</label>
+    <input type="text" id="new-bowl" name="name">
+  </div>
+
+  <button type="submit">Add Bowl</button>
+</form>

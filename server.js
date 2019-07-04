@@ -24,10 +24,10 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Static directory
-app.use(express.static("app/public"));
+app.use(express.static("public"));
 
 // Import routes and give the server access to them
-require("./controllers/cereal_controller.js")(app)
+require("./controllers/cereal-routes.js")(app)
 // require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app

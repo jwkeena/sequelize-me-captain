@@ -1,0 +1,8 @@
+<li>
+	{{name}}
+	<button class="eat" data-id="{{id}}" data-eaten="{{eaten}}">
+		{{#unless eaten}}EAT{{else}}REFILL BOWL{{/unless}}
+	</button>
+
+	<button class="delete-bowl" data-id="{{this.id}}">THROW OUT</button>
+</li>
