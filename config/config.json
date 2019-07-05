@@ -1,26 +1,26 @@
 {
   "development": {
-    "username": "root",
-    "password": "PASSWORD",
-    "database": "cereals_db",
-    "host": "127.0.0.1",
+    "username": "n8cujs6gaarem6l3",
+    "password": "qqfizm3by95jvjkv",
+    "database": "a5jakuichxlbcmk5",
+    "host": "gzp0u91edhmxszwf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "username": "n8cujs6gaarem6l3",
+    "password": "qqfizm3by95jvjkv",
+    "database": "a5jakuichxlbcmk5",
+    "host": "gzp0u91edhmxszwf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql",
     "operatorsAliases": false
   },
   "production": {
-    "username": "root",
+    "username": "n8cujs6gaarem6l3",
+    "password": "qqfizm3by95jvjkv",
+    "database": "a5jakuichxlbcmk5",
+    "host": "gzp0u91edhmxszwf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "use_env_variable": "JAWSDB_URL",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   }
