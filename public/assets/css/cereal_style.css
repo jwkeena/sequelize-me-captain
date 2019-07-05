@@ -1,7 +1,41 @@
+/* https://imgur.com/gallery/84frd/comment/432237189 */
+/* https://css-tricks.com/perfect-full-page-background-image/ */
+body { 
+  background: url("/assets/img/background2.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.main {
+  background-color: indianred;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 5px solid bisque;
+}
+
+#logo {
+  padding-top: 20px;
+  display: block;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+ul.empty-bowl {
+  list-style-image: url("/assets/img/empty-bowl.png");
+}
+
+ul.full-bowl {
+  list-style-image: url("/assets/img/full-bowl.png")
+}
+
 li {
     padding: 5px;
     margin: 5px;
     background: #faebd7;
+    border-radius: 5px;
   }
   
   .label {
@@ -17,4 +51,3 @@ li {
   .form-group {
     margin-bottom: 5px;
   }
-  

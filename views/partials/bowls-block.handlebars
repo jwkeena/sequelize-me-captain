@@ -1,8 +1,19 @@
 <li>
 	{{name}}
-	<button class="eat" data-id="{{id}}" data-eaten="{{eaten}}">
-		{{#unless eaten}}EAT{{else}}REFILL BOWL{{/unless}}
+	<button class="eat" style="border: 0; background: transparent" data-id="{{id}}" data-eaten="{{eaten}}">
+
+		{{#unless eaten}}
+
+		<img src="/assets/img/pac-man.png" style="width: 24px; height: 24px;" alt="eat the bowl!">
+
+		{{else}}
+		<img src="/assets/img/refill.png" style="width: 30px; height: 35px;" alt="refill the bowl!">
+
+		{{/unless}}
+
 	</button>
 
-	<button class="delete-bowl" data-id="{{this.id}}">THROW OUT</button>
+	<button class="delete-bowl" style="border: 0; background: transparent;" data-id="{{this.id}}">
+		<img src="/assets/img/trash-can.png" style="position: relative; left: -7px">
+	</button>
 </li>

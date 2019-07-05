@@ -1,32 +1,52 @@
-<h1>CEREAL NERDS</h1>
+<div class="container">
+  <img id="logo" src="/assets/img/sequelize.png">
+  <div class="row main">
 
-<h2>Bowls that have not been eaten</h2>
+    <div class="col-md-4">
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UNEATEN</h5>
+      <ul class="full-bowl">
+        {{#each cereals}}
+        {{#unless eaten}}
+        {{> bowls-block eaten=false}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
 
-<ul>
-  {{#each cereals}}
-    {{#unless eaten}}
-      {{> bowls-block eaten=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
+    <div class="col-md-4">
+      <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EATEN</h5>
+      <ul class="empty-bowl">
+        {{#each cereals}}
+        {{#if eaten}}
+        {{> bowls-block eaten=true}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
 
-<h2>Bowls that have been eaten</h2>
+    <div class="col-md-4">
+      <h5>ADD A BOWL</h5>
+      <form class="create-form">
+        <div class="form-group">
+          <input type="text" id="new-bowl" name="name">
+          <button type="submit">Add</button>
+        </div>
+      </form>
+    </div>
 
-<ul>
-  {{#each cereals}}
-    {{#if eaten}}
-      {{> bowls-block eaten=true}}
-    {{/if}}
-  {{/each}}
-</ul>
+    <div class="col-md-3"></div>
+    <p>Looking for other cereal names? Try <a href="http://theimaginaryworld.com/cbarch.html" target="_blank">this</a>,
+      or maybe <a href="https://www.mrbreakfast.com/cereal_list.asp" target="_blank">this</a>,
+      insane website.</p>
 
-<h2>Add a Bowl</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="new-bowl">Cereal Name:</label>
-    <input type="text" id="new-bowl" name="name">
   </div>
 
-  <button type="submit">Add Bowl</button>
-</form>
+</div>
+
+<footer class="page-footer">
+  <!-- For a buffer -->
+  <div class="footer-copyright">
+  </div>
+  <div class="footer-copyright">
+  </div>
+</footer>
