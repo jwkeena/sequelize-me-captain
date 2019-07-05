@@ -42,6 +42,16 @@ $(document).ready(function () {
             console.log("Bowl thrown out");
             location.reload();
         })
-    })
+    });
+
+    let backgroundIsSwitched = false;
+    $("#background-switch").on("click", function() {
+        backgroundIsSwitched = !backgroundIsSwitched;
+        if (backgroundIsSwitched) {
+            $('body').css('background', 'url(/assets/img/background2.jpg)');
+        } else {
+            $('body').css('background', 'url(/assets/img/background3.jpg)');
+        }
+    });
 
 });

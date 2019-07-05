@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "n8cujs6gaarem6l3",
-    "password": "qqfizm3by95jvjkv",
-    "database": "a5jakuichxlbcmk5",
-    "host": "gzp0u91edhmxszwf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "kongas",
+    "database": "cereals_db",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
   },

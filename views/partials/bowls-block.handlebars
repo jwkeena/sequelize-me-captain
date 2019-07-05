@@ -4,16 +4,16 @@
 
 		{{#unless eaten}}
 
-		<img src="/assets/img/pac-man.png" style="width: 24px; height: 24px;" alt="eat the bowl!">
+		<img src="/assets/img/pac-man.png" style="width: 24px; height: 24px;" alt="Pac Man is hungry" title="Eat the bowl!">
 
 		{{else}}
-		<img src="/assets/img/refill.png" style="width: 30px; height: 35px;" alt="refill the bowl!">
+		<img src="/assets/img/refill.png" style="width: 30px; height: 35px;" alt="Pouring milk jug" title="Refill the bowl!">
 
 		{{/unless}}
 
 	</button>
 
 	<button class="delete-bowl" style="border: 0; background: transparent;" data-id="{{this.id}}">
-		<img src="/assets/img/trash-can.png" style="position: relative; left: -7px">
+		<img src="/assets/img/trash-can.png" style="position: relative; left: -7px" alt="Trash can" title="Delete bowl">
 	</button>
 </li>
