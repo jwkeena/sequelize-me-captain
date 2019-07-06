@@ -48,9 +48,13 @@ $(document).ready(function () {
     $("#background-switch").on("click", function() {
         backgroundIsSwitched = !backgroundIsSwitched;
         if (backgroundIsSwitched) {
-            $('body').css('background', 'url(/assets/img/background2.jpg)');
-        } else {
             $('body').css('background', 'url(/assets/img/background3.jpg)');
+        } else {
+            $('body').css('background', 'url(/assets/img/background2.jpg) no-repeat center center fixed');
+            $("body").css("-webkit-background-size", "cover");
+            $("body").css("-moz-background-size", "cover");
+            $("body").css("-o-background-size: cover", "cover");
+            $("body").css("background-size: cover", "cover");
         }
     });
 
