@@ -3,7 +3,7 @@ $(document).ready(function () {
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
-        const newBowl = {
+        let newBowl = {
             name: $("#new-bowl").val().trim(),
             eaten: false
         };
@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 
     $(".eat").on("click", function () {
-        const id = $(this).data("id");
+        let id = $(this).data("id");
         let isEaten = $(this).data("eaten");
         isEaten = !isEaten // Flip the boolean here. Doesn't work on server side
 
@@ -35,7 +35,7 @@ $(document).ready(function () {
     });
 
     $(".delete-bowl").on("click", function () {
-        const id = $(this).data("id");
+        let id = $(this).data("id");
         $.ajax("/api/" + id, {
             type: "DELETE",
         }).then(function () {

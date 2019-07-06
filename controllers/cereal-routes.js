@@ -10,16 +10,16 @@ module.exports = function (app) {
             // console.log("This is the raw sequelize db response: ", dbCereal)
             let handlebarsObject = {
                 cereals: []
-            }
+            };
 
             for (let i = 0; i < dbCereal.length; i++) {
                 handlebarsObject.cereals.push(dbCereal[i].dataValues);
-            }
+            };
 
             // console.log("This is the handlebars object: ", handlebarsObject);
             res.render("index", handlebarsObject);
-        })
-    })
+        });
+    });
 
     // Adds a new bowl of cereal
     app.post("/api/new", function (req, res) {
@@ -45,7 +45,7 @@ module.exports = function (app) {
             }
         ).then(function (dbCereal) {
             res.render("index", dbCereal);
-        })
+        });
     });
 
     // Deletes a bowl of cereal
@@ -54,9 +54,14 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             }
-        }).then(function (dbCereal) {
-            res.render("index", dbCereal);
-        })
-    })
+        }).then(function (result) {
+            if (result.affectedRows == 0) {
+                // If no rows were changed, then the ID must not exist, so 404
+                return res.status(404).end();
+            } else {
+                res.status(200).end();
+            };
+        });
+    });
 
 };
