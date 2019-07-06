@@ -1,5 +1,23 @@
 $(document).ready(function () {
 
+    // Sets local storage variable only once
+    // Must use JSON.parse to convert stored string into boolean
+    let backgroundIsSwitched = JSON.parse(window.localStorage.getItem("backgroundIsSwitched"));
+    if (backgroundIsSwitched === null || backgroundIsSwitched.length === 0) {
+        window.localStorage.setItem("backgroundIsSwitched", JSON.stringify(false));
+    };
+
+    // Keeps background choice even after page refresh with CRUD operations
+    if (backgroundIsSwitched) {
+        $('body').css('background', 'url(/assets/img/background3.jpg)');
+    } else {
+        $('body').css('background', 'url(/assets/img/background2.jpg) no-repeat center center fixed');
+        $("body").css("-webkit-background-size", "cover");
+        $("body").css("-moz-background-size", "cover");
+        $("body").css("-o-background-size: cover", "cover");
+        $("body").css("background-size: cover", "cover");
+    };
+
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
@@ -44,10 +62,11 @@ $(document).ready(function () {
         })
     });
 
-    let backgroundIsSwitched = false;
     $("#background-switch").on("click", function() {
-        backgroundIsSwitched = !backgroundIsSwitched;
-        if (backgroundIsSwitched) {
+        let temp = JSON.parse(window.localStorage.getItem("backgroundIsSwitched"));
+        temp = !temp;
+        window.localStorage.setItem("backgroundIsSwitched", JSON.stringify(temp));
+        if (temp) {
             $('body').css('background', 'url(/assets/img/background3.jpg)');
         } else {
             $('body').css('background', 'url(/assets/img/background2.jpg) no-repeat center center fixed');
