@@ -7,5 +7,8 @@ Built for practice making a clean and efficient full-stack application, with all
 # usage
 No login required. Simply type in a new cereal name and press enter; refill or eat the bowls with the milk and pac-man symbols, respectively.
 
+# try it yourself!
+https://calm-reef-35185.herokuapp.com/
+
 # demo
 ![](sequelize-demo.gif)
